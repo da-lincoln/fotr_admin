@@ -1,0 +1,2 @@
+<? //Dashboard ?>
+@extends('layout.layout')
