@@ -18,15 +18,10 @@ Route::get('/', function () {
 });
 
 // Send to station page where only data from location matching name is shown
-Route::get('/station', function(){
 
-    $name = request('name');
-
-   return view('stations', [
-       'name' => $name
-   ]);
-});
 
 Route::get('/login', function (){
     return view('login');
 });
+
+Route::get('/station','StationsController@index');
