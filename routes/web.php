@@ -26,3 +26,5 @@ Route::get('/login', function (){
 
 Route::get('/station','StationsController@index');
 Route::get('/station/new','StationsController@create');
+Route::post('/station/new','StationsController@store');
+Route::get('/station/{station}','StationsController@show');

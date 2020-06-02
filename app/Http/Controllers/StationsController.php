@@ -28,7 +28,8 @@ class StationsController extends Controller
      */
     public function create()
     {
-        return view('stations.create');
+        $station = new Stations();
+        return view('stations.create', ['station'=>$station]);
     }
 
     /**
@@ -58,7 +59,8 @@ class StationsController extends Controller
      */
     public function show($id)
     {
-        //
+        $station = Stations::find($id);
+        return view('stations.show',['station'=>$station]);
     }
 
     /**
