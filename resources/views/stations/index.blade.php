@@ -13,7 +13,7 @@
                 </h3>
             </div>
             <div class="box-body">
-                <a href="" class="button">New Entry</a>
+                <a href="station/new" class="button">New Entry</a>
                 <table>
                     <thead>
                     <tr>
@@ -46,27 +46,6 @@
                 </table>
             </div>
         </div>
-        <div class="box box-content" >
-            <div class="box-header">
-                <h3 class="box-title">
-                    <span>New Entry</span>
-                </h3>
-            </div>
-            <div class="box-body">
-                <form method="POST" enctype="multipart/form-data">
-                    <input class="date-input" type="datetime-local" name="date" required>
-                    <input type="file" name="image" required>
-                    <select name="location" required>
-                        <option hidden disabled selected value>Select one</option>
-                        <option value="river">River</option>
-                        <option value="upstream">Upstream</option>
-                        <option value="floodplain">Floodplain</option>
-                        <option value="downstream">Downstream</option>
-                    </select>
 
-                    <input type="submit" class="button" value="ADD" name="add">
-                </form>
-            </div>
-        </div>
     </div>
 @endsection

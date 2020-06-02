@@ -28,7 +28,7 @@ class StationsController extends Controller
      */
     public function create()
     {
-        //
+        return view('stations.create');
     }
 
     /**
@@ -39,7 +39,15 @@ class StationsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $station = new Stations();
+        $station->name = request();
+        $station->river_focus = request();
+        $station->image = request();
+        $station->date_taken = request();
+
+        $station->Save();
+
+        return redirect('station');
     }
 
     /**

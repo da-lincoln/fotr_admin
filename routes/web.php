@@ -25,3 +25,4 @@ Route::get('/login', function (){
 });
 
 Route::get('/station','StationsController@index');
+Route::get('/station/new','StationsController@create');
