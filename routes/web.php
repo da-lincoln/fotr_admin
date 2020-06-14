@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'StationsController@home');
 
 // Send to station page where only data from location matching name is shown
 
@@ -29,7 +27,14 @@ Route::get('/login', function (){
 Route::get('/station/{name}','StationsController@index');
 Route::get('/station/{name}/create','StationsController@create');
 Route::post('/station/{name}','StationsController@store');
-Route::get('/station/{station}','StationsController@show');
+Route::get('/station/{station}/view','StationsController@show');
 Route::get('station/{station}/edit','StationsController@edit');
 Route::patch('/station/{station}','StationsController@update');
 Route::get('/station/{station}/image', 'StationsController@getImage');
+Route::delete('/station/{name}', 'StationsController@destroy');
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

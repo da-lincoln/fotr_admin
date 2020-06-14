@@ -25,6 +25,12 @@ class StationsController extends Controller
 
     }
 
+    public function home()
+    {
+        $station = Stations::all();
+        return View('home')->with(compact('station'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -79,8 +85,7 @@ class StationsController extends Controller
     public function show($id)
     {
         $station = Stations::find($id);
-
-        return view('stations.show',['station'=>$station]);
+        return view('stations.show',['station'=>$station] );
     }
 
     /**
@@ -135,7 +140,9 @@ class StationsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $station = Stations::findOrFail($id);
+        $station->delete();
+        return redirect('station/'.$station->name);
     }
 
     /**

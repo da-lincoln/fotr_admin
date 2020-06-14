@@ -42,8 +42,8 @@
                             <option value="floodplain" <?php if($station->river_focus=="floodplain") echo 'selected="selected"'; ?> >Floodplain</option>
                             <option value="downstream" <?php if($station->river_focus=="downstream") echo 'selected="selected"'; ?> >Downstream</option>
                         </select>
-                        <button type="submit" class="button">Submit</button>
-                        <a href="/station/{{$station->name}}" class="button">Cancel</a>
+                        <button type="submit" class="button success">Submit</button>
+                        <a href="/station/{{$station->name}}" class="button alert">Cancel</a>
                     </div>
 
 
