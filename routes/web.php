@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'StationsController@home');
-//Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('/', 'HomeController@index')->name('home');
 
 // Send to station page where only data from location matching name is shown
 

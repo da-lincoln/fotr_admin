@@ -25,11 +25,6 @@ class StationsController extends Controller
 
     }
 
-    public function home()
-    {
-        $station = Stations::all();
-        return View('home')->with(compact('station'));
-    }
 
     /**
      * Show the form for creating a new resource.
