@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', 'HomeController@index')->name('home');
+//Route::get('/', 'HomeController@index')->name('home');
 
 // Send to station page where only data from location matching name is shown
 
@@ -33,7 +33,6 @@ Route::get('/station/{station}/image', 'StationsController@getImage');
 Route::delete('/station/{name}', 'StationsController@destroy');
 
 
-
 Auth::routes();
 
-
+Route::get('/', 'HomeController@index')->name('home');
