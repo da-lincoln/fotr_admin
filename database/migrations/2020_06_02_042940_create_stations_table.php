@@ -18,6 +18,7 @@ class CreateStationsTable extends Migration
             $table->string('station_name',32);
             $table->string('river_focus',32);
             $table->string('image',255);
+            $table->dateTime('date_taken');
             $table->timestamps();
         });
     }

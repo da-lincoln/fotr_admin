@@ -13,25 +13,15 @@
                 </h3>
             </div>
             <div class="box-body">
-                <form method="POST" action="/station">
+                <form method="POST" action="/station/{{$name}}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label for="stationName">Station</label>
-                        <select name="stationName" required>
-                            <option hidden disabled selected value>Select one</option>
-                            <option value="dumbartion">Dumbarton</option>
-                            <option value="millards_pool">Millards Pool</option>
-                            <option value="lloyds_reserve">Lloyds Reserve</option>
-                            <option value="goomalling_bridge">Goomalling Bridge</option>
-                            <option value="boyagerring_brook">Boyagerring Brook</option>
-                            <option value="newcastle_bridge">Newcastle Bridge</option>
-                            <option value="slaughterhouse_bridge">Slaughterhouse Bridge</option>
-                            <option value="weatherall_reserve">Weatherall Reserve</option>
-                        </select>
+                        <h3>{{ucwords(str_replace('_',' ',$name))}}</h3>
+                        <input type="hidden" readonly name="stationName" value="{{$name}}">
                         <label for="stationDate">Date</label>
                         <input class="date-input" type="date" name="stationDate" required>
                         <label for="stationImage">Photo</label>
-                        <input type="file" name="stationImage" required>
+                        <input type="file" name="stationImage" >
                         <label for="stationRiver">River</label>
                         <select name="stationRiver" required>
                             <option hidden disabled selected value>Select one</option>
@@ -40,7 +30,8 @@
                             <option value="floodplain">Floodplain</option>
                             <option value="downstream">Downstream</option>
                         </select>
-                        <button type="submit" class="button" name="add">Submit</button>
+                        <button type="submit" class="button">Submit</button>
+                        <a href="/station/{{$name}}" class="button">Cancel</a>
                     </div>
 
 

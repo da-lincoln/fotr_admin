@@ -13,36 +13,28 @@
                 </h3>
             </div>
             <div class="box-body">
-                <a href="station/new" class="button">New Entry</a>
+                <a href="{{$name}}/create" class="button">New Entry</a>
                 <table>
                     <thead>
                     <tr>
                         <th>Date</th>
-                        <th>Photo orientation</th>
+                        <th>River</th>
                         <th>Image</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($station as $stations)
+                    @foreach($station As $stations)
                         <tr>
-                            <td>{{$stations->created_at}}</td>
+                            <td>{{$stations->date_taken}}</td>
                             <td>{{$stations->river_focus}}</td>
-                            <td>{{$stations->image}}</td>
-                            <td></td>
+                            <td><a href="/station/{{$stations->id}}/image">Link</a></td>
+                            <td><a href='{{url("/station/{$stations->id}/edit")}}'>Edit</a></td>
                             <td></td>
                         </tr>
                     @endforeach
                     </tbody>
-
-                    <tr>
-                        <td>date</td>
-                        <td>location</td>
-                        <td><a href="#">Link</a></td>
-                        <td><a href="#">Edit</a></td>
-                        <td><a href="#" onclick="return confirm('Are you sure you wish to delete this entry?');">Delete</a></td>
-                    </tr>
                 </table>
             </div>
         </div>

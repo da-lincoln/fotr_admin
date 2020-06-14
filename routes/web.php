@@ -24,7 +24,12 @@ Route::get('/login', function (){
     return view('login');
 });
 
-Route::get('/station','StationsController@index');
-Route::get('/station/new','StationsController@create');
-Route::post('/station/new','StationsController@store');
+//Route::resource('/station','StationsController');
+
+Route::get('/station/{name}','StationsController@index');
+Route::get('/station/{name}/create','StationsController@create');
+Route::post('/station/{name}','StationsController@store');
 Route::get('/station/{station}','StationsController@show');
+Route::get('station/{station}/edit','StationsController@edit');
+Route::patch('/station/{station}','StationsController@update');
+Route::get('/station/{station}/image', 'StationsController@getImage');
