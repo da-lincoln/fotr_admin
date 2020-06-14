@@ -14,13 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'StationsController@home');
+//Route::get('/', 'HomeController@index')->name('home');
 
 // Send to station page where only data from location matching name is shown
 
 
-Route::get('/login', function (){
-    return view('login');
-});
+//Route::get('/login', function (){ return view('login'); });
 
 //Route::resource('/station','StationsController');
 
@@ -37,4 +36,4 @@ Route::delete('/station/{name}', 'StationsController@destroy');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
